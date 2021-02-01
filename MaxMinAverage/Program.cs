@@ -18,14 +18,14 @@ namespace MaxMinAverage
                 Console.Write("How many numbers you want to insert? ");
                 input = Console.ReadLine();
             } while (!int.TryParse(input, out numberofValues));
-            for (int loop = 1; loop < numberofValues+1; loop++)
+            for (int loop = 1; loop <= numberofValues; loop++)
             {
                 do
                 {
-                    Console.Write("Insert your {0} number: ", loop);
+                    Console.Write($"Insert your {loop} number: ");
                     input = Console.ReadLine();
                 } while (!int.TryParse(input, out value));
-                sum = sum + value;
+                sum += value;
                 if(loop == 1) 
                 {
                     highestValue = value;
@@ -39,9 +39,9 @@ namespace MaxMinAverage
             }
             Console.WriteLine("");
             Console.WriteLine("According to the numbers inserted:");
-            Console.WriteLine("The lowest number was: {0}", lowestValue);
-            Console.WriteLine("The highest number was: {0}", highestValue);
-            Console.WriteLine("The average of all numbers is: {0}", Convert.ToDecimal(sum)/Convert.ToDecimal(numberofValues));
+            Console.WriteLine($"The lowest number was: {lowestValue}");
+            Console.WriteLine($"The highest number was: {highestValue}");
+            Console.WriteLine($"The average of all numbers is: {Convert.ToDecimal(sum)/Convert.ToDecimal(numberofValues)}");
             Console.WriteLine("");
             Console.WriteLine("Press ENTER to continue...");
             Console.ReadLine();
